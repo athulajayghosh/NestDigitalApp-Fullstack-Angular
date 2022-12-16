@@ -1,0 +1,86 @@
+<app-admin-nav></app-admin-nav>
+<h1 class="display-4 text-center mt-5">Edit Employee</h1> 
+<div class="container">
+    <div class="row">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 mb-5 d-flex justify-content-center">
+            <label for="" class="form-label">Emp Code</label>
+            <div style="width: 50%;" class="d-flex">
+                <input type="text" class="form-control mx-2" placeholder="" name="text"[(ngModel)]="empcode">
+                <button class="btn btn-primary" (click)="readvalue()">Search</button>
+            </div>
+        </div>
+    </div>
+<ng-container *ngIf="edit==true;then bedit else aedit" ></ng-container>
+    <ng-template #bedit>
+        <div class="row mt-5">
+            <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <div class="row g-3" *ngFor="let i of searchData">
+
+                    <div class="col col-4 col-sm-4 col-lg-4 col-xl-4 col-xxl-4">
+                        <label for="" class="form-label">Employee Name</label>
+                        <input type="text" name="" id="" value={{i.name}} class="form-control" disabled>
+                    </div>
+                    <div class="col col-4 col-sm-4 col-lg-4 col-xl-4 col-xxl-4">
+                        <label for="" class="form-label">Designation</label>
+                        <input type="text" name="" id="" value={{i.designation}} class="form-control" disabled>
+                    </div>
+                    <div class="col col-4 col-sm-4 col-lg-4 col-xl-4 col-xxl-4">
+                        <label for="" class="form-label">Email id</label>
+                        <input type="text" name="" id="" value={{i.email}} class="form-control" disabled>
+                    </div>
+                    <div class="col col-6 col-sm-6 col-lg-6 col-xl-6 col-xxl-6">
+                        <label for="" class="form-label">Mobile No</label>
+                        <input type="text" name="" id="" value={{i.phone}} class="form-control" disabled>
+                    </div>
+                    <div class="col col-6 col-sm-6 col-lg-6 col-xl-6 col-xxl-6">
+                        <label for="" class="form-label">Username</label>
+                        <input type="text disabled" name="" id="" value={{i.username}} class="form-control" disabled>
+                    </div>
+                    <div class="col col-6 col-sm-6 col-lg-6 col-xl-6 col-xxl-6">
+                        <button class="btn btn-danger w-25 " (click)="deletebtn(i.id)">Delete</button>
+                        <button class="btn btn-primary w-25 mx-2" (click)="editbtn()">Edit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+
+    <ng-template #aedit>
+        <div class="row mt-5">
+            <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <div class="row g-3" *ngFor="let i of searchData">
+
+                    <div class="col col-4 col-sm-4 col-lg-4 col-xl-4 col-xxl-4">
+                        <label for="" class="form-label">Employee Name</label>
+                        <input type="text" name="" id="" [(ngModel)]="name1" placeholder={{i.name}} class="form-control">
+                    </div>
+                    <div class="col col-4 col-sm-4 col-lg-4 col-xl-4 col-xxl-4">
+                        <label for="" class="form-label">Designation</label>
+                        <input type="text" name="" id="" [(ngModel)]="designation1" placeholder={{i.designation}} class="form-control">
+                    </div>
+                    <div class="col col-4 col-sm-4 col-lg-4 col-xl-4 col-xxl-4">
+                        <label for="" class="form-label">Email id</label>
+                        <input type="text" name="" [(ngModel)]="email1" placeholder={{i.email}} class="form-control">
+                    </div>
+                    <div class="col col-4 col-sm-4 col-lg-4 col-xl-4 col-xxl-4">
+                        <label for="" class="form-label">Mobile No</label>
+                        <input type="text" name="" [(ngModel)]="phone1" placeholder={{i.phone}} class="form-control">
+                    </div>
+                    <div class="col col-4 col-sm-4 col-lg-4 col-xl-4 col-xxl-4">
+                        <label for="" class="form-label">Username</label>
+                        <input type="text disabled" name="" [(ngModel)]="username1" placeholder={{i.username}} class="form-control">
+                    </div>
+                    <div class="col col-4 col-sm-4 col-lg-4 col-xl-4 col-xxl-4">
+                        <label for="" class="form-label">Password</label>
+                        <input type="text disabled" name="" [(ngModel)]="password" class="form-control">
+                    </div>
+                    <div class="col col-6 col-sm-6 col-lg-6 col-xl-6 col-xxl-6">
+                        <button class="btn btn-success w-25" (click)="savebtn()">Save</button>
+                        <button class="btn btn-danger w-25 mx-2" (click)="cancelbtn()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+
+</div>

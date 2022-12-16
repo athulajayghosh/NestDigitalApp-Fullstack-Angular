@@ -1,0 +1,52 @@
+<app-employee-nav></app-employee-nav>
+<h1 class="display-4 text-center mt-5">Request Leave</h1> 
+<div class="container">
+<div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 mt-5">
+    <label class="mb-2" for=""><h5>Available Leaves</h5></label>
+    <table class="table justify-content-center table-striped table-bordered mb-5">
+        <thead class="bg-light">
+            <tr *ngFor="let i of leaveDetails" >
+                <th class="text-center" scope="col">Casual Leaves:    {{i.casualLeave}}</th>
+                <th class="text-center" scope="col">Sick Leaves:    {{i.sickLeave}}</th>
+                <th class="text-center" scope="col">Special Leaves:    {{i.specialLeave}}</th>
+            </tr>
+        </thead>
+    </table>
+</div>  </div>
+
+<p> </p>
+<div class="container">
+<div class="row">
+  <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+      <div class="row g-3 d-flex justify-content-center align-items-center h-100">
+        
+          <div class="col col-12 col-sm-4 col-lg-4 col-xl-4 col-xxl-4">
+              <label for="" class="form-label">From</label>
+              <input type="date" name="doctor" [(ngModel)]="fromDate" class="form-control">
+          </div>
+          <div class="col col-12 col-sm-4 col-lg-4 col-xl-4 col-xxl-4">
+              <label for="" class="form-label">To</label>
+              <input type="date" name="mobileno" [(ngModel)]="toDate" class="form-control">
+          </div>
+          <div class="col col-12 col-sm-4 col-lg-4 col-xl-4 col-xxl-4">
+            <label for="" class="form-label">Leave type</label>
+            <select class="form-select form-select" [(ngModel)]="leaveType" aria-label=".form-select-lg example">
+                <option selected></option>
+                <option value="casualLeave">Casual Leave</option>
+                <option value="sickLeave">Sick Leave</option>
+                <option value="specialLeave">Special Leave</option>
+              </select>
+        </div>      
+          <div class="col col-12 col-sm-12 col-lg-12 col-xl-12 col-xxl-12">
+              <label for="" class="form-label">Reason</label>
+              <textarea type="text" name="address" [(ngModel)]="remarks" class="form-control"></textarea>
+          </div>        
+          <div class="col col-10 col-sm-10 col-lg-10 col-xl-10 col-xxl-10 text-center">
+              <button (click)="readleaveData()" class="btn btn-primary w-50">Apply</button>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+
+

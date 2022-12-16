@@ -1,0 +1,26 @@
+<app-admin-nav></app-admin-nav>
+<h1 class="display-4 text-center mt-3 ">All employee</h1> 
+<table class="table table-striped-columns">
+    <tbody>
+    <tr>
+    <th scope="col">Emp Code</th>
+    <th scope="col">Employee Name</th>
+    <th scope="col">Designation</th>
+    <th scope="col">Email</th>
+    <th scope="col">Mobile</th>
+    <th scope="col">Username</th>
+    </tr>
+   
+   
+   
+    <tr *ngFor="let i of data">
+    <td>{{i.empcode}}</td>    
+    <td>{{i.name}}</td>
+    <td>{{i.designation}}</td>
+    <td>{{i.email}}</td>
+    <td>{{i.phone}}</td>
+    <td>{{i.username}}</td>
+    </tr>
+    
+    </tbody>
+    </table>

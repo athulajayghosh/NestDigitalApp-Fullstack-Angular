@@ -1,0 +1,81 @@
+<app-security-nav></app-security-nav>
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link " routerLink="/viewnestLogs" aria-current="page" >Employee</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" routerLink="/viewnestguestLogs" >Guest</a>
+    </li>
+  </ul>
+
+  <div class="container">
+    <div class="row mt-4">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            <div class="row">
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <h1 class="text-center display-4  mb-4">Visitors Logs</h1>
+                </div>
+                <div
+                    class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 mb-5 d-flex justify-content-center">
+                    <div style="width: 50%;" class="d-flex">
+                        <input type="date" class="form-control mx-2" placeholder="" name="date"
+                            [(ngModel)]="date">
+                            <button class="btn btn-success" (click)="searchLog()">Search</button>
+                    </div>
+                </div>
+
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 mb-2"
+                    *ngIf="searchData.length!=0">
+                    <h5>Search Result</h5>
+                    <table class="table justify-content-center table-bordered mb-5">
+                        <thead class="bg-light">
+                            <tr>
+                                <th class="text-center" scope="col">Name</th>
+                                <th class="text-center" scope="col">Phone</th>
+                                <th class="text-center" scope="col">Date</th>
+                                <th class="text-center" scope="col">Entry Time</th>
+                                <th class="text-center" scope="col">Exit Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                <tr *ngFor="let i of searchData">
+                                    <td class="text-center">{{i.name}}</td>
+                                    <td class="text-center">{{i.phone}}</td>
+                                    <td class="text-center">{{i.date}}</td>
+                                    <td class="text-center">{{i.entryTime}}</td>
+                                    <td class="text-center" *ngIf="i.exitTime!=null;else temp ">{{i.exitTime}}</td>
+                                    <ng-template #temp><td class="text-center">not exited</td></ng-template>
+                                </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 mt-5">
+                    <h5 *ngIf="searchData.length!=0">All Logs</h5>
+                    <table class="table justify-content-center table-striped table-bordered mb-5">
+                        <thead class="bg-light">
+                            <tr>
+                                <th class="text-center" scope="col">Name</th>
+                                <th class="text-center" scope="col">Phone</th>
+                                <th class="text-center" scope="col">Date</th>
+                                <th class="text-center" scope="col">Entry Time</th>
+                                <th class="text-center" scope="col">Exit Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                <tr *ngFor="let i of visitorLogs">
+                                    <td class="text-center">{{i.name}}</td>
+                                    <td class="text-center">{{i.phone}}</td>
+                                    <td class="text-center">{{i.date}}</td>
+                                    <td class="text-center">{{i.entryTime}}</td>
+                                    <td class="text-center" *ngIf="i.exitTime!=null;else temp ">{{i.exitTime}}</td>
+                                    <ng-template #temp><td class="text-center">not exited</td></ng-template>
+                                </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

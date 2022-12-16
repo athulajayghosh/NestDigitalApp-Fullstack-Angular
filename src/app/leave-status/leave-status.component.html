@@ -1,0 +1,33 @@
+<app-employee-nav></app-employee-nav>
+<h1 class="display-4 text-center mt-3 ">My Leave Status</h1> 
+<table class="table table-striped-columns">
+    <tbody>
+    <tr>
+    <th scope="col">From</th>
+    <th scope="col">To</th>
+    <th scope="col">Leave Type</th>
+    <th scope="col">Applied on</th>
+    <th scope="col">Reason</th>
+    <th scope="col">Status</th>
+    </tr>
+    <tr *ngFor="let i of data">
+    <td>{{i.fromDate}}</td>    
+    <td>{{i.toDate}}</td>
+    <td>{{i.leaveType}}</td>
+    <td>{{i.applyDate}}</td>
+    <td>{{i.remarks}}</td>
+    <td>
+        <div *ngIf="i.leaveStatus==0">
+            <button type="button" class="btn btn-warning form-control" disabled>Processing</button>
+        </div>
+        <div *ngIf="i.leaveStatus==1">
+            <button type="button" class="btn btn-success form-control" disabled>Approved</button>
+        </div>
+        <div *ngIf="i.leaveStatus==-1">
+            <button type="button" class="btn btn-danger form-control" disabled>Rejected</button>
+        </div>
+    </td>
+    </tr>
+    
+    </tbody>
+    </table>

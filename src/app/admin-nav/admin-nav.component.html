@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand">Nest Admin Portal</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Employee
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="/addemp">Add Employee</a></li>
+              <li><a class="dropdown-item" routerLink="/searchemp">Search employee</a></li>
+              <li><a class="dropdown-item" routerLink="/editEmp">Edit employee</a></li>
+              <li><a class="dropdown-item" routerLink="/viewallemp">View All Employee</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Security
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="/addsec">Add Security</a></li>
+              <li><a class="dropdown-item" routerLink="/viewallsec">View All Security</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Leaves
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="/adminleavepanel">Pending Leaves</a></li>
+              <li><a class="dropdown-item" routerLink="/">View All Leaves</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Logs
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="/AdminviewnestLogs">Employee logs</a></li>
+              <li><a class="dropdown-item" routerLink="/AdminviewnestguestLogs">Visitor Logs</a></li>
+            </ul>
+          </li>
+
+        </ul>
+        <form class="d-flex ">
+          <button class="btn btn-outline-light me-2" routerLink="/adminlogin" type="">Logout</button>
+        </form>
+      </div>
+    </div>
+  </nav>

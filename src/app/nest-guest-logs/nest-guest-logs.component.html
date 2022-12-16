@@ -1,0 +1,33 @@
+<app-security-nav></app-security-nav>
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link"  routerLink="/nestLogs">Employee</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" routerLink="/nestGuestLogs" aria-current="page">Guest</a>
+    </li>
+  </ul>
+
+  <div class="container">
+    <div class="row">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex justify-content-center mt-5">
+            <div style="width: 100rm;" class="row g-3">
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center mb-5">
+                    <h1 class="display-4 mb-3 mt-3">Visitors Log</h1>
+                </div>
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <label for="" class="form-label">Visitor Name</label>
+                    <input type="text" class="form-control" name="name" [(ngModel)]="name" placeholder="Enter name...">
+                </div>
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <label for="" class="form-label">Visitor Phone number</label>
+                    <input type="text" class="form-control" name="phone" [(ngModel)]="phone" placeholder="Enter phone...">
+                </div>
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex justify-content-center mt-3">
+                    <button class="btn btn-success  mx-2 w-25 " (click)="addEntry()">Add Entry</button>
+                    <button class="btn btn-danger  mx-2 w-25 " (click)="addExit()">Add Exit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
